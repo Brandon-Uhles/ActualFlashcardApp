@@ -12,30 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ActualFlashcardApp.ViewModels;
 
-namespace ActualFlashcardApp
+namespace ActualFlashcardApp.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewDeckView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewDeckView : UserControl
     {
-        public MainWindow()
+        public NewDeckView()
         {
             InitializeComponent();
-
-            DataContext = new MainViewModel();
-        }
-
-        private void github_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void closeApplication_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
