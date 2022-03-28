@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ActualFlashcardApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Flashcard Application" Height="450" Width="800">
+    <Grid Margin="10,10,10,10" UseLayoutRounding="False" Width="780">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Label HorizontalAlignment="Center" Grid.Column="1">Hiragana Flashcard Application</Label>
+        <GroupBox Header="Main Menu" Grid.Row="1" Margin="0,0,5,5" HorizontalAlignment="Stretch" FontSize="18">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Content="New Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Width="223"/>
+                <Button Content="Load Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Width="223"/>
+                <Button Content="Edit Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="223"/>
+                <Button Content="See Statistics" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Width="223"/>
+                <Button Content="Github" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="223"/>
+                <Button Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="223"/>
+            </Grid>
+        </GroupBox>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="WrapWithOverflow" Text="This will eventually be some kind of large logo, breakdown, or graphic. I haven't decided yet! The goal is to transfer this to Unity for better GUI manipulation and gamification next cohort, but I need to figure out how to set Unity up with Github version control, since assets aren't subject to having changes tracked." VerticalAlignment="Center" Grid.ColumnSpan="2" Foreground="Black" Height="388" Background="#335BBD27" Width="520" TextAlignment="Center"/>
     </Grid>
 </Window>
