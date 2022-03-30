@@ -6,7 +6,44 @@
              xmlns:local="clr-namespace:ActualFlashcardApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Margin="5,5,5,5" UseLayoutRounding="False" VerticalAlignment="Bottom" Width ="790" Height="400" Grid.ColumnSpan="2">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="1" Grid.ColumnSpan="2" Grid.Row="2" >
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+            </Grid.Effect>
+
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#097964" Offset="0"/>
+                    <GradientStop Color="#00d4ff" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+        </Grid>
+        <ContentControl Content="{Binding SelectedViewModel}"/>
+
+
+        <!--BUTTONS-->
+        <!--<ContentControl Content="{Binding SelectedViewModel}"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <Button Content="New Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding UpdateViewCommand}" CommandParameter="New Deck" Width="80" Margin="5,5,5,5"/>
+            <Button Content="Load Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Command="{Binding UpdateViewCommand}" CommandParameter="Load Deck" Width="80" Margin="5,5,5,5"/>
+            <Button Content="Edit Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Command="{Binding UpdateViewCommand}" CommandParameter="Edit Deck" Width="80" Margin="5,5,5,5"/>
+            <Button Content="See Statistics" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Command="{Binding UpdateViewCommand}" CommandParameter="Statistics" Width="80" Margin="5,5,5,5"/>
+            <Button Content="Github" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Click="github_Click" Width="80" Margin="5,5,5,5"/>
+            <Button Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Click="closeApplication_Click" Width="80" Margin="5,5,5,5"/>
+        </StackPanel>-->
+        <Label Content="Big Butts" HorizontalAlignment="Left" Margin="249,129,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
     </Grid>
 </UserControl>

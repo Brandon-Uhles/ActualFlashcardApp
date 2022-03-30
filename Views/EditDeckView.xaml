@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ActualFlashcardApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="1">
         <Label FontSize="36" HorizontalAlignment="Center" Content="Edit Deck"/>
     </Grid>
 </UserControl>
