@@ -25,7 +25,7 @@
                     <GradientStop Color="#00d4ff" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
+            <!--Title card-->
         </Grid>
         <Grid Grid.Column="0" VerticalAlignment="Top" Height="Auto">
             <Grid.ColumnDefinitions>
@@ -40,7 +40,7 @@
         </Grid>
 
 
-        <!--BUTTONS-->
+        <!--Button bar-->
         <ContentControl Content="{Binding SelectedViewModel}"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
             <Button Content="New Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding UpdateViewCommand}" CommandParameter="New Deck" Width="80" Margin="5,5,5,5"/>

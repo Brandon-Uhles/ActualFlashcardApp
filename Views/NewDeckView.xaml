@@ -122,12 +122,12 @@
                         <Button x:Name="addToSetButton" Grid.Row="6" Content="Add To Set" Click="AddToSetButton_Click"/>
                     </Grid>
 
-                    <!-- Vertical seperator -->
+                    <!-- Vertical spacing -->
                     <StackPanel HorizontalAlignment="Center" Grid.Column="3" Grid.Row="4" Orientation="Horizontal">
                         <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Background="#7F097964" Width="10" />
                     </StackPanel>
 
-                    <!-- List area -->
+                    <!-- List of cards -->
                     <Grid Grid.Column="5" Grid.Row="4">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>

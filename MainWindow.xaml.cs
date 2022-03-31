@@ -16,9 +16,8 @@ using ActualFlashcardApp.ViewModels;
 
 namespace ActualFlashcardApp
 {
-    /// <summary>
+
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,12 +26,12 @@ namespace ActualFlashcardApp
 
             DataContext = new MainViewModel();
         }
-
+        //handler for github button. Eventually needs to be changed to a hyperlink button since you can't set one via the C# class
         public void github_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-
+        //Handler for closing application
         public void closeApplication_Click(object sender, RoutedEventArgs e)
         {
             Close();
