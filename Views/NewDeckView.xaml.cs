@@ -42,7 +42,7 @@ namespace ActualFlashcardApp.Views
         {
             if (string.IsNullOrWhiteSpace(termText.Text) || string.IsNullOrWhiteSpace(definitionText.Text))
             {
-                MessageBox.Show("Please make sure none of the given fields contains whiespace", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Please make sure none of the given fields contains whitespace", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 return;
             }
