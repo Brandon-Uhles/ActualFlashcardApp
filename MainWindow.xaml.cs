@@ -28,12 +28,12 @@ namespace ActualFlashcardApp
             DataContext = new MainViewModel();
         }
 
-        private void github_Click(object sender, RoutedEventArgs e)
+        public void github_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void closeApplication_Click(object sender, RoutedEventArgs e)
+        public void closeApplication_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

@@ -6,7 +6,7 @@
              xmlns:viewmodels="clr-namespace:ActualFlashcardApp.ViewModels"   
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:NewDeckViewModel}">
+                <DataTemplate DataType="{x:Type viewmodels:NewDeckViewModel}">
             <views:NewDeckView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:EditDeckViewModel}">

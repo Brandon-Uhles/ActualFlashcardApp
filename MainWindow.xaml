@@ -5,19 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ActualFlashcardApp"
         mc:Ignorable="d"
-        Title="Flashcard Application" Height="450" Width="800">
-    <Grid Margin="10,10,10,10" UseLayoutRounding="False" VerticalAlignment="Bottom">
+        Title="Flashcard Application" Height="900" Width="1650">
+    
+    <Grid Margin="5,5,5,5" UseLayoutRounding="False" VerticalAlignment="Center" Height="Auto">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition  Height="860"/>
         </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="1" Grid.ColumnSpan="2" Grid.Row="2" >
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="25" ShadowDepth="0" Opacity="0.8"/>
+            </Grid.Effect>
 
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#097964" Offset="0"/>
+                    <GradientStop Color="#00d4ff" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+        </Grid>
+        <Grid Grid.Column="0" VerticalAlignment="Top" Height="Auto">
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#097964" Offset="0"/>
+                    <GradientStop Color="#00d4ff" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Grid.Column="1" Foreground="#FFF" FontSize="32" Text="Flashcard Deck Viewer and Manager" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+
+        <!--BUTTONS-->
         <ContentControl Content="{Binding SelectedViewModel}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
             <Button Content="New Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding UpdateViewCommand}" CommandParameter="New Deck" Width="80" Margin="5,5,5,5"/>
             <Button Content="Load Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Command="{Binding UpdateViewCommand}" CommandParameter="Load Deck" Width="80" Margin="5,5,5,5"/>
             <Button Content="Edit Deck" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Command="{Binding UpdateViewCommand}" CommandParameter="Edit Deck" Width="80" Margin="5,5,5,5"/>
