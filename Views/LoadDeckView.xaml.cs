@@ -48,9 +48,9 @@ namespace ActualFlashcardApp.Views
             progressText.Text = progress;
         }
 
-        /// <summary>
+
         /// Updates the UI area where the user can interact with the flashcard set.
-        /// </summary>
+ 
         private void UpdateFlashcardUI()
         {
             UpdateProgressText();
@@ -65,7 +65,7 @@ namespace ActualFlashcardApp.Views
 
                 return;
             }
-            else // Set the cursor to "Hand" if a flashcard set is loaded
+            else
             {
                 flashcardContainer.Cursor = Cursors.Hand;
             }
@@ -78,28 +78,20 @@ namespace ActualFlashcardApp.Views
             flashcardText.FontWeight = (currentFlashcardState == FlashcardState.Term) ? FontWeights.Bold : FontWeights.Normal; // Definition is bold while term is normal font weight
         }
 
-        /// <summary>
         /// Toggles the enable/disable status of the buttons for navigating through the flashcard set.
-        /// </summary>
         private void ToggleNavigationButtons()
         {
             previousFlashcardButton.IsEnabled = (flashcardsListCurrentIndex > 0);
             nextFlashcardButton.IsEnabled = (flashcardsListCurrentIndex < (currentFlashcardSet == null ? -1 : currentFlashcardSet.FlashcardList.Count - 1));
         }
 
-        /// <summary>
-        /// Toggles the enable/disable status of the "Unload Current Set" button.
-        /// </summary>
+        /// Toggles the enable/disable status of the "Unload Current Set" button
         private void ToggleUnloadCurrentSetButton()
         {
             unloadCurrentSetButton.IsEnabled = (flashcardSetListBox.Items.Count > 0);
         }
 
-        /// <summary>
         /// Checks whether a flashcard set is already present in the flashcard set list box on the window.
-        /// </summary>
-        /// <param name="flashcardSet">The flashcard set to be checked for whether it is already loaded or not.</param>
-        /// <returns>A boolean that states whether the flashcard set is loaded in the program or not.</returns>
         private bool AlreadyLoaded(FlashcardSet flashcardSet)
         {
             foreach (FlashcardSet fs in flashcardSetListBox.Items)
@@ -113,9 +105,7 @@ namespace ActualFlashcardApp.Views
             return false;
         }
 
-        /// <summary>
         /// Goes to the previous flashcard in the current set (if there is one).
-        /// </summary>
         private void PreviousFlashcard()
         {
             flashcardsListCurrentIndex--;
@@ -131,9 +121,8 @@ namespace ActualFlashcardApp.Views
             UpdateFlashcardUI();
         }
 
-        /// <summary>
+
         /// Goes to the next flashcard in the current set (if there is one).
-        /// </summary>
         private void NextFlashcard()
         {
             flashcardsListCurrentIndex++;
@@ -149,9 +138,7 @@ namespace ActualFlashcardApp.Views
             UpdateFlashcardUI();
         }
 
-        /// <summary>
         /// Toggles the current flashcard face between the term and definition.
-        /// </summary>
         private void ToggleFlashcardFace()
         {
             if (currentFlashcardSet == null)
@@ -164,11 +151,7 @@ namespace ActualFlashcardApp.Views
             UpdateFlashcardUI();
         }
 
-        /// <summary>
-        /// Event handler for when the "Load Flashcard Set" button is clicked.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the button is clicked.</param>
+        /// Event handler for when the "Load Flashcard Set" button is clicked
         private void LoadSetButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -202,7 +185,7 @@ namespace ActualFlashcardApp.Views
 
                         if (AlreadyLoaded(set)) // If the flashcard set is already loaded, prompt the user to make sure that that want to load in the flashcard set again
                         {
-                            MessageBoxResult msgResult = MessageBox.Show("Flashcard set has already been loaded into the program! Are you sure you still want to load in flashcard set?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                            MessageBoxResult msgResult = MessageBox.Show("Flashcard set has already been loaded. Are you sure you still want to load in flashcard set?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                             if (msgResult == MessageBoxResult.No)
                             {
@@ -226,11 +209,7 @@ namespace ActualFlashcardApp.Views
             }
         }
 
-        /// <summary>
-        /// Event handler for when the "Unload Current Set" button is clicked.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the button is clicked.</param>
+        /// Event handler for when the "Unload Current Set" button is clicked
         private void UnloadCurrentSetButton_Click(object sender, RoutedEventArgs e)
         {
             if (flashcardSetListBox.Items.Count > 0)
@@ -254,11 +233,7 @@ namespace ActualFlashcardApp.Views
             }
         }
 
-        /// <summary>
         /// Event handler for when the user clicks on the flashcard container with the left mouse button.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for flashcard container is clicked.</param>
         private void FlashcardContainer_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             flashcardContainer.Focus();
@@ -266,31 +241,19 @@ namespace ActualFlashcardApp.Views
             ToggleFlashcardFace();
         }
 
-        /// <summary>
         /// Event handler for when the "Previous Flashcard" button is clicked.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the button is clicked.</param>
         private void PreviousFlashcardButton_Click(object sender, RoutedEventArgs e)
         {
             PreviousFlashcard();
         }
 
-        /// <summary>
         /// Event handler for when the "Next Flashcard" button is clicked.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the button is clicked.</param>
         private void NextFlashcardButton_Click(object sender, RoutedEventArgs e)
         {
             NextFlashcard();
         }
 
-        /// <summary>
         /// Event handler for when the item selection changes in the flashcard set list box.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the selection is changed.</param>
         private void FlashcardSetListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Update the current flashcard to the one selected
@@ -301,11 +264,7 @@ namespace ActualFlashcardApp.Views
             UpdateFlashcardUI();
         }
 
-        /// <summary>
-        /// Event handler for when the window is closing.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the window is closing.</param>
+        /// Event handler for when the window is closing
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             if (currentFlashcardSet != null && currentFlashcardSet.FlashcardList.Count > 0) // Show warning message if the user has a flashcard set currently loaded
@@ -323,11 +282,7 @@ namespace ActualFlashcardApp.Views
             mainWindow.Show();
         }
 
-        /// <summary>
-        /// Event handler for when a key is held down on the flashcard container.
-        /// </summary>
-        /// <param name="sender">The object that raised the event.</param>
-        /// <param name="e">The event arguments for when the key is held down.</param>
+        /// Event handler for when a key is held down on the flashcard container
         private void FlashcardContainer_KeyDown(object sender, KeyEventArgs e)
         {
             if (currentFlashcardSet == null)

@@ -1,5 +1,4 @@
-﻿//Based on an opensource flashcard container I found, will need editing for language learning specifics
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
