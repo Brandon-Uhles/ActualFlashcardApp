@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ActualFlashcardApp"
         mc:Ignorable="d"
-        Title="Flashcard Application" Height="450" Width="800">
+        Title="Flashcard Application" Height="900" Width="1650">
     
     <Grid Margin="5,5,5,5" UseLayoutRounding="False" VerticalAlignment="Center" Height="Auto">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition  Height="410"/>
+            <RowDefinition  Height="860"/>
         </Grid.RowDefinitions>
         <Grid Grid.RowSpan="1" Grid.ColumnSpan="2" Grid.Row="2" >
             <Grid.Effect>

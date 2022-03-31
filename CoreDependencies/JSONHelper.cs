@@ -21,6 +21,6 @@ namespace ActualFlashcardApp.CoreDependencies
         public const string TermJsonPropertyName = "term";
 
         /// Sets the property name for the other side of the flashcard
-        public const string DefinitionJsonPropertyName = "definition";
+        public const string DefinitionJsonPropertyName = "define";
     }
 }
